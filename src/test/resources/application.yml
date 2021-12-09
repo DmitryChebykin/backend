@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    username: sa
+    password: sa
+    url: jdbc:h2:mem:test_db
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+
+
+server:
+  port: ${SERVER_PORT:8081}
+  servlet.context-path: ${CONTEXT_PATH:/}
+
+logging:
+  level:
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG
+  file:
+    name: logs.log.log

@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    username: user
+    password: password
+
+    url: jdbc:postgresql://90.189.158.7:54320/develop
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 51
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  profiles:
+    active: default
+    include: mail
+
+  rabbitmq:
+    host: 90.189.158.7
+    port: 5672
+    username: user
+    password: password
+
+  elasticsearch:
+    rest:
+      uris: http://90.189.158.7:9200
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: 90.189.158.7:9200
+server:
+  port: ${SERVER_PORT:8081}
+  servlet.context-path: ${CONTEXT_PATH:/}
+
+logging:
+  level:
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG
+
+  file:
+    name: logs\log.log
+
+sharepoint:
+  basePath: D:/MO
+  savedFolder: D:/saved
+  inboxFolder: D:/inbox
+  path-for-onetimereq-docx: D:/TEMP
+  inbox-one-time-request-folder: D:/OR
+  regexForYear: (19|20|21)[0-9][0-9]
+  formatForFileTime: dd.MM.yyyy HH:mm:ss
+
+elastic:
+  host: 90.189.158.7:9200
+  preTag: <mark>
+  postTag: </mark>
+
+file-converter-url: 90.189.158.7:3300

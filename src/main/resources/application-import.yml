@@ -1,0 +1,62 @@
+sharepoint:
+  username: user
+  password: user
+  domain: region-stat
+  rubric: >
+    Алкоголь,
+    ВнешнеЭкономическаяДеятельность,
+    Жилье,
+    Инвестиции,
+    Население,
+    НаукаЭкология,
+    Предпринимательство,
+    Промышленность,
+    Рынок,
+    Сводные,
+    СельскоеХозяйство,
+    СоциальнаяСфера,
+    Строительство,
+    ТранспортИСвязь,
+    ТрудИЗаработнаяПлата,
+    УровеньЖизни,
+    Финансы,
+    Цены,
+    Экономика
+  literate-rubric: >
+    Алкоголь,
+    Внешне-экономическая деятельность,
+    Жилье,
+    Инвестиции,
+    Население,
+    Наука и экология,
+    Предпринимательство,
+    Промышленность,
+    Рынок,
+    Сводные,
+    Сельское хозяйство,
+    Социальная сфера,
+    Строительство,
+    Транспорт и связь,
+    Труд и заработная плата,
+    Уровень жизни,
+    Финансы,
+    Цены,
+    Экономика
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration
+      - org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
+  main:
+    web-application-type: none
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org.springframework.orm.jpa: off
+    org.springframework.transaction: off
+  file:
+    name: import.log

@@ -1,0 +1,26 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: [http://localhost:8081]
+
+  application:
+    name: Regionstat
+
+  elasticsearch:
+    rest:
+      uris: http://90.189.158.7:9200
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: 90.189.158.7:9200
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
